@@ -1,4 +1,4 @@
-Página inicial
+📸 Tela Página Inicial
 ![alt text](image.png)
 
 # Sistema de Cadastro (Clientes, Fornecedores, Produtos)
@@ -59,3 +59,7 @@ http://localhost:8000
 ✅ Interface simples com Bootstrap
 
 ✅ Organização com padrão MVC
+
+🧑‍💻 Autor
+Desenvolvido por Xandre De Paula
+💼 Projeto para vaga de estágio e para fins de estudo.
