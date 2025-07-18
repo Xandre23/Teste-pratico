@@ -58,6 +58,4 @@ http://localhost:8000
 
 ✅ Organização com padrão MVC
 
-🧑‍💻 Autor
-Desenvolvido por Xandre De Paula
-💼 Projeto para vaga de estágio e para fins de estudo.
+
