@@ -58,4 +58,33 @@ public function buscarTodos()
     return $stmt->fetchAll(PDO::FETCH_ASSOC);
 }
 
+public function buscarPorId($id)
+{
+    $stmt = $this->conn->prepare("SELECT * FROM $this->table_name WHERE id = :id");
+    $stmt->bindParam(':id', $id);
+    $stmt->execute();
+    return $stmt->fetch(PDO::FETCH_ASSOC);
+}
+
+public function atualizar()
+{
+    $query = "UPDATE $this->table_name SET nome = :nome, cnpj = :cnpj, telefone = :telefone, email = :email WHERE id = :id";
+    $stmt = $this->conn->prepare($query);
+
+    $stmt->bindParam(':nome', $this->nome);
+    $stmt->bindParam(':cnpj', $this->cnpj);
+    $stmt->bindParam(':telefone', $this->telefone);
+    $stmt->bindParam(':email', $this->email);
+    $stmt->bindParam(':id', $this->id);
+
+    return $stmt->execute();
+}
+
+public function deletar($id)
+{
+    $stmt = $this->conn->prepare("DELETE FROM $this->table_name WHERE id = :id");
+    $stmt->bindParam(':id', $id);
+    return $stmt->execute();
+}
+
 }
