@@ -5,6 +5,9 @@ use App\Controllers\FornecedorController;
 use App\Controllers\ProdutoController;
 use App\Controllers\HomeController;
 
+$uri = parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH);
+$method = $_SERVER['REQUEST_METHOD'];
+
 //rotas inicial
 
 $router->get('/', function() {
@@ -13,22 +16,42 @@ $router->get('/', function() {
 
 //rotas cliente
 
-// Rota para listar clientes
+
 $router->get('/clientes', function () {
     (new ClienteController())->index();
 });
 
-// Rota para exibir o formulário de cadastro de cliente
+
 $router->get('/clientes/create', function () {
     (new ClienteController())->create();
 });
 
-// Rota para salvar um novo cliente
+
 $router->post('/clientes', function () {
     (new ClienteController())->store();
 });
 
-//rotas fornecedores
+
+if ($uri === '/clientes/store' && $method === 'POST') {
+    (new ClienteController())->store();
+}
+
+
+if ($uri === '/clientes/edit' && $method === 'GET') {
+    (new ClienteController())->edit();
+}
+
+if ($uri === '/clientes/update' && $method === 'POST') {
+    (new ClienteController())->update();
+}
+
+
+if ($uri === '/clientes/delete' && $method === 'GET') {
+    (new ClienteController())->delete();
+}
+
+
+$fornecedorController = new FornecedorController();
 
 $router->get('/fornecedores', function () {
     (new FornecedorController())->listarFornecedores();
@@ -42,11 +65,24 @@ $router->post('/cadastrarFornecedor', function () {
     (new FornecedorController())->inserirFornecedor();
 });
 
+if ($uri === '/fornecedores/editar' && $method === 'GET') {
+    $fornecedorController->editarFornecedor();
+}
+
+if ($uri === '/fornecedores/atualizar' && $method === 'POST') {
+    $fornecedorController->atualizarFornecedor();
+}
+
+if ($uri === '/fornecedores/deletar' && $method === 'GET') {
+    $fornecedorController->deletarFornecedor();
+}
+
+
 //rota de produtos
 
 $router->get('/produtos/cadastrar', function () {
     $controller = new ProdutoController();
-    $controller->formularioProduto(); // Método que chama a view
+    $controller->formularioProduto(); 
 });
 
 $router->post('/produtos', function() {
@@ -61,7 +97,7 @@ $router->get('/produtos', function() {
 
 $router->get('/produtos/editar', function() {
     $controller = new ProdutoController();
-    $controller->editarProduto();  // Ou formularioEditarProduto, desde que combine com o controller
+    $controller->editarProduto(); 
 });
 
 $router->post('/produtos/editar', function() {
@@ -69,18 +105,8 @@ $router->post('/produtos/editar', function() {
     $controller->atualizarProduto();
 });
 
-// Rota para deletar produto
 $router->get('/produtos/deletar', function() {
     $controller = new ProdutoController();
     $controller->deletarProduto();
 });
 
-/*$router->get('/fornecedores', function() {
-    $controller = new FornecedorController();
-    $controller->index();
-});
-
-//$router->get('/produtos', function() {
-    $controller = new ProdutoController();
-    $controller->index();
-});*/

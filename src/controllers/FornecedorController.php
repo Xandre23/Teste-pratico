@@ -47,4 +47,62 @@ class FornecedorController
         exit;
         }
     }
+public function editarFornecedor()
+{
+    $id = $_GET['id'] ?? null;
+    if ($id) {
+        $model = new Fornecedores();
+        $fornecedor = $model->buscarPorId($id);
+        require __DIR__ . '/../views/fornecedores/editarFornecedor.php';
+        exit;
+    }
+}
+
+public function atualizarFornecedor()
+{
+    if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+        $id = $_POST['id'] ?? null;
+        $nome = $_POST['nome'] ?? '';
+        $cnpj = $_POST['cnpj'] ?? '';
+        $telefone = $_POST['telefone'] ?? '';
+        $email = $_POST['email'] ?? '';
+
+        $fornecedor = new Fornecedores();
+        $fornecedor->id = $id;
+        $fornecedor->nome = $nome;
+        $fornecedor->cnpj = $cnpj;
+        $fornecedor->telefone = $telefone;
+        $fornecedor->email = $email;
+
+        $fornecedor->atualizar();
+
+        echo "
+        <script>
+            alert('Fornecedor atualizado com sucesso!');
+            setTimeout(function() {
+                window.location.href = '/fornecedores';
+            }, 100);
+        </script>";
+        exit;
+    }
+}
+
+public function deletarFornecedor()
+{
+    $id = $_GET['id'] ?? null;
+    if ($id) {
+        $model = new Fornecedores();
+        $model->deletar($id);
+    }
+
+    echo "
+    <script>
+        alert('Fornecedor deletado com sucesso!');
+        setTimeout(function() {
+            window.location.href = '/fornecedores';
+        }, 100);
+    </script>";
+    exit;
+}
+
 }

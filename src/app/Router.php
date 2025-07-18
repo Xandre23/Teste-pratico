@@ -18,7 +18,7 @@ class Router
 
     public function loadRoutes()
     {
-        $router = $this; // agora o routes.php vai ter acesso à variável $router
+        $router = $this; 
     require_once __DIR__ . '/routes.php';
     }
 
@@ -32,6 +32,7 @@ class Router
         } else {
             http_response_code(404);
             echo "Página não encontrada.";
+            
         }
     }
 }
