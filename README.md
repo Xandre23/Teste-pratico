@@ -8,7 +8,6 @@ Este é um sistema simples de cadastro de **clientes**, **fornecedores** e **pro
 ## 📁 Estrutura de Pastas
 /sistema_cadastro
 ├── config/ # Configuração de conexão com o banco
-├── data/ # Dump do banco (ex: .sql)
 ├── public/ # Raiz pública da aplicação (acessada pelo navegador)
 │ └── index.php # Ponto de entrada do app
 ├── src/
@@ -18,7 +17,6 @@ Este é um sistema simples de cadastro de **clientes**, **fornecedores** e **pro
 │ └── views/ # Views (HTML + PHP)
 ├── .htaccess # Redireciona requisições para public/index.php
 ├── composer.json # (caso use dependências)
-└── README.md
 ---
 
 ## ✅ Pré-requisitos
