@@ -19,8 +19,6 @@ Este é um sistema simples de cadastro de **clientes**, **fornecedores** e **pro
 ├── .htaccess # Redireciona requisições para public/index.php
 ├── composer.json # (caso use dependências)
 └── README.md
-
-
 ---
 
 ## ✅ Pré-requisitos
