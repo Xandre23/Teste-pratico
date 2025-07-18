@@ -5,19 +5,6 @@
 
 Este é um sistema simples de cadastro de **clientes**, **fornecedores** e **produtos**, desenvolvido em PHP puro com padrão **MVC** (Model - View - Controller), sem frameworks externos.
 
-## 📁 Estrutura de Pastas
-/sistema_cadastro
-├── config/ # Configuração de conexão com o banco
-├── public/ # Raiz pública da aplicação (acessada pelo navegador)
-│ └── index.php # Ponto de entrada do app
-├── src/
-│ ├── app/ # Router e lógica principal
-│ ├── controllers/ # Controllers
-│ ├── models/ # Models
-│ └── views/ # Views (HTML + PHP)
-├── .htaccess # Redireciona requisições para public/index.php
-├── composer.json # (caso use dependências)
----
 
 ## ✅ Pré-requisitos
 
