@@ -1,0 +1,26 @@
+{
+  "name": "labsystem/sistemacadastro",
+  "description": "Sistema MVC para cadastro de clientes, fornecedores e produtos.",
+  "type": "project",
+  "require": {},
+  "autoload": {
+    "psr-4": {
+      "App\\": "src/",
+      "Config\\": "config/"
+    }
+  },
+  "authors": [
+    {
+      "name": "Xandre De Paula Raimundo",
+      "email": "xandredepaula2312@gmail.com"
+    }
+  ],
+  "config": {
+    "optimize-autoloader": true,
+    "sort-packages": true
+  },
+  "minimum-stability": "stable",
+  "license": "MIT"
+}
+
+

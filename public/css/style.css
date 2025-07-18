@@ -1,0 +1,419 @@
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    max-width: 900px;
+    margin: 40px auto;
+    background: #f5f7fa;
+    color: #2f3640;
+    padding: 0 20px;
+}
+/* PÁGINA LISTAR PRODUTO*/
+h1 {
+    text-align: center;
+    color: #34495e;
+    margin-bottom: 30px;
+}
+
+a.btn-novo {
+    display: inline-block;
+    margin-bottom: 25px;
+    padding: 10px 20px;
+    background: #6ab04c;
+    color: white;
+    text-decoration: none;
+    border-radius: 6px;
+    font-weight: 600;
+    box-shadow: 0 4px 8px rgb(106 176 76 / 0.3);
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+a.btn-novo:hover {
+    background: #58a437;
+    box-shadow: 0 6px 12px rgb(88 164 55 / 0.4);
+}
+
+table {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0 10px;
+    background: white;
+    box-shadow: 0 4px 12px rgb(0 0 0 / 0.1);
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+thead tr {
+    background: #0c0d0d;
+    color: white;
+    font-weight: 600;
+    text-align: left;
+    border-bottom: none;
+}
+
+th, td {
+    padding: 15px 20px;
+}
+
+tbody tr {
+    background: #dfe6e9;
+    box-shadow: 0 2px 5px rgb(0 0 0 / 0.05);
+    transition: background-color 0.2s ease;
+}
+
+tbody tr:hover {
+    background-color: #b2bec3;
+}
+
+td.acoes {
+    text-align: right;
+}
+
+.btn {
+    display: inline-block;
+    padding: 6px 12px;
+    border-radius: 6px;
+    font-weight: 600;
+    text-decoration: none;
+    color: white;
+    margin-left: 8px;
+    user-select: none;
+    transition: background-color 0.3s ease;
+}
+
+.btn.editar {
+    background-color: #0984e3;
+    box-shadow: 0 3px 7px rgb(9 132 227 / 0.4);
+}
+
+.btn.editar:hover {
+    background-color: #74b9ff;
+    box-shadow: 0 5px 12px rgb(116 185 255 / 0.5);
+}
+
+.btn.deletar {
+    background-color: #d63031;
+    box-shadow: 0 3px 7px rgb(214 48 49 / 0.4);
+}
+
+.btn.deletar:hover {
+    background-color: #ff7675;
+    box-shadow: 0 5px 12px rgb(255 118 117 / 0.5);
+}
+
+.empty {
+    text-align: center;
+    padding: 25px;
+    color: #636e72;
+    font-size: 1.1em;
+}
+
+
+
+/* PÁGINA CADASTRAR CLIENTE*/
+.form-container {
+    max-width: 450px;
+    margin: 50px auto;
+    background: white;
+    padding: 30px 40px;
+    border-radius: 12px;
+    box-shadow: 0 6px 15px rgb(0 0 0 / 0.1);
+    color: #2f3640;
+}
+
+.form-container h1 {
+    margin-bottom: 30px;
+    color: #34495e;
+    text-align: center;
+}
+
+.form-cadastro label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 600;
+    color: #555;
+}
+
+.form-cadastro input[type="text"],
+.form-cadastro input[type="email"],
+.form-cadastro input[type="tel"] {
+    width: 100%;
+    padding: 12px 14px;
+    margin-bottom: 20px;
+    border: 1.8px solid #ccc;
+    border-radius: 8px;
+    font-size: 1em;
+    transition: border-color 0.3s ease;
+}
+
+.form-cadastro input[type="text"]:focus,
+.form-cadastro input[type="email"]:focus,
+.form-cadastro input[type="tel"]:focus {
+    outline: none;
+    border-color: #6ab04c;
+    box-shadow: 0 0 6px #6ab04caa;
+}
+
+button.btn.salvar {
+    width: 100%;
+    background-color: #6ab04c;
+    color: white;
+    padding: 14px;
+    border: none;
+    border-radius: 10px;
+    font-size: 1.1em;
+    cursor: pointer;
+    font-weight: 700;
+    box-shadow: 0 5px 15px rgb(106 176 76 / 0.4);
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+button.btn.salvar:hover {
+    background-color: #58a437;
+    box-shadow: 0 7px 20px rgb(88 164 55 / 0.6);
+}
+
+a.btn.voltar {
+    display: inline-block;
+    margin-top: 25px;
+    color: #34495e;
+    text-decoration: none;
+    font-weight: 600;
+    transition: color 0.3s ease;
+}
+
+a.btn.voltar:hover {
+    color: #6ab04c;
+}
+
+/* Produtos*/
+.input-field {
+    width: 100%;
+    padding: 0.75rem 1rem;
+    border: 1px solid #d1d5db; /* cinza claro */
+    border-radius: 0.75rem;
+    font-size: 1rem;
+    color: #374151; /* cinza escuro */
+    outline: none;
+    transition: border-color 0.3s ease;
+}
+
+.input-field:focus {
+    border-color: #4f46e5; /* azul índigo */
+    box-shadow: 0 0 0 3px rgba(79, 70, 229, 0.3);
+}
+
+/* Cadastrar fornecedores style*\
+
+/* Reset básico */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body, html {
+  font-family: 'Inter', sans-serif;
+}
+
+.page-bg {
+  background: linear-gradient(to bottom right, #e0f2fe, #c7d2fe);
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+}
+
+/* Container do formulário */
+.form-container {
+  background: white;
+  padding: 2rem 2.5rem;
+  border-radius: 12px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  max-width: 500px;
+  text-align: center;
+}
+
+/* Título */
+.form-title {
+  font-size: 1.75rem;
+  font-weight: 700;
+  color: #333;
+  margin-bottom: 1.5rem;
+}
+
+/* Agrupamento dos campos */
+.form-group {
+  margin-bottom: 1rem;
+  text-align: left;
+}
+
+label {
+  display: block;
+  margin-bottom: 0.4rem;
+  font-weight: 600;
+  color: #444;
+}
+
+input {
+  width: 100%;
+  padding: 0.65rem;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 1rem;
+  transition: border 0.2s ease;
+}
+
+input:focus {
+  border-color: #4a90e2;
+  outline: none;
+}
+
+/* Botões */
+.btn {
+  display: inline-block;
+  padding: 0.7rem 1.2rem;
+  font-size: 1rem;
+  font-weight: 600;
+  border-radius: 6px;
+  text-decoration: none;
+  text-align: center;
+  transition: background 0.2s ease, color 0.2s ease;
+}
+
+.btn-primary {
+  background-color: #4a90e2;
+  color: white;
+  border: none;
+}
+
+.btn-primary:hover {
+  background-color: #357abd;
+}
+
+.btn-secondary {
+  background-color: #6c757d;
+  color: white;
+  margin-top: 1rem;
+}
+
+.btn-secondary:hover {
+  background-color: #5a6268;
+}
+
+.btn-outline {
+  border: 2px solid #4a90e2;
+  color: #4a90e2;
+  background-color: transparent;
+  margin-top: 0.5rem;
+  display: block;
+}
+
+.btn-outline:hover {
+  background-color: #e6f0ff;
+  color: #2c6bb2;
+}
+
+/* Alinhamento dos botões */
+.links {
+  margin-top: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+  align-items: center;
+}
+
+
+/* LISTA Fornecedores */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    background: #f1f5f9;
+    color: #333;
+    padding: 30px;
+    display: flex;
+    justify-content: center;
+}
+
+.container {
+    width: 100%;
+    max-width: 1000px;
+    background: #fff;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+}
+
+h1 {
+    font-size: 26px;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 15px;
+}
+
+th, td {
+    text-align: left;
+    padding: 14px;
+    border-bottom: 1px solid #e2e8f0;
+}
+
+th {
+    background-color: #01080f;
+    font-weight: 600;
+}
+
+
+tr:hover {
+    background-color: #f1f5f9;
+}
+
+
+
+.btn-novo {
+    background-color: #10b981;
+    color: white;
+    margin-bottom: 20px;
+    display: inline-block;
+}
+
+.btn-novo:hover {
+    background-color: #059669;
+}
+
+.btn-editar {
+    background-color: #3b82f6;
+    color: white;
+}
+
+.btn-editar:hover {
+    background-color: #2563eb;
+}
+
+.btn-deletar {
+    background-color: #ef4444;
+    color: white;
+}
+
+.btn-deletar:hover {
+    background-color: #dc2626;
+}
+
+.empty {
+    text-align: center;
+    color: #666;
+    margin-top: 20px;
+    font-style: italic;
+}
+

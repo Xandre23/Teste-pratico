@@ -1,0 +1,141 @@
+/* Reset básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body, input, button, select, textarea {
+    font-family: 'Inter', sans-serif;
+}
+
+.page-bg {
+    background: linear-gradient(135deg, #f0f4f8, #d9e2ec);
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+}
+
+.form-container {
+    background: #fff;
+    padding: 30px 40px;
+    border-radius: 12px;
+    box-shadow: 0 8px 24px rgba(0,0,0,0.1);
+    width: 100%;
+    max-width: 450px;
+}
+
+.form-title {
+    font-weight: 700;
+    font-size: 1.8rem;
+    color: #102a43;
+    margin-bottom: 25px;
+    text-align: center;
+    letter-spacing: 0.05em;
+}
+
+.form-group {
+    margin-bottom: 20px;
+    display: flex;
+    flex-direction: column;
+}
+
+.form-group label {
+    margin-bottom: 6px;
+    font-weight: 600;
+    color: #334e68;
+}
+
+.form-group input {
+    padding: 12px 14px;
+    border: 1.8px solid #bcccdc;
+    border-radius: 8px;
+    font-size: 1rem;
+    transition: border-color 0.3s ease;
+    outline-offset: 2px;
+}
+
+.form-group input:focus {
+    border-color: #486581;
+    outline: none;
+}
+
+.btn {
+    cursor: pointer;
+    border: none;
+    border-radius: 25px;
+    font-weight: 600;
+    padding: 12px 30px;
+    font-size: 1rem;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    display: inline-block;
+    text-align: center;
+    text-decoration: none;
+    user-select: none;
+    margin-right: 10px;
+    min-width: 140px;
+}
+
+/* Botão principal */
+.btn-primary {
+    background-color: #0077b6;
+    color: #fff;
+    box-shadow: 0 4px 12px rgba(0,119,182,0.4);
+}
+
+.btn-primary:hover {
+    background-color: #005f86;
+}
+
+/* Botão secundário */
+.btn-secondary {
+    background-color: #90a4ae;
+    color: #102a43;
+    box-shadow: 0 4px 12px rgba(144,164,174,0.4);
+}
+
+.btn-secondary:hover {
+    background-color: #627d89;
+    color: white;
+}
+
+/* Botão outline */
+.btn-outline {
+    background: transparent;
+    color: #0077b6;
+    border: 2px solid #0077b6;
+}
+
+.btn-outline:hover {
+    background-color: #0077b6;
+    color: white;
+}
+
+.links {
+    margin-top: 30px;
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+/* Responsividade */
+@media (max-width: 480px) {
+    .form-container {
+        padding: 25px 20px;
+        max-width: 100%;
+    }
+
+    .btn {
+        min-width: 100%;
+        margin-right: 0;
+        margin-bottom: 12px;
+    }
+
+    .links {
+        flex-direction: column;
+        align-items: stretch;
+    }
+}
